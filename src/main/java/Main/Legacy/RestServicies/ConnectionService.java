@@ -1,4 +1,4 @@
-package Main.RestServicies;
+package Main.Legacy.RestServicies;
 
 import org.springframework.stereotype.Service;
 

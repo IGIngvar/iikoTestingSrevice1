@@ -2,32 +2,19 @@ package Main.Controllers;
 
 
 
-import Main.Objects.Requests.PhoneNumberAndDateOrderRequest;
-import Main.Objects.Responses.Login.Authorization;
-import Main.Objects.Responses.Oganizatons.Organization;
-import Main.Objects.Responses.Oganizatons.Organizations;
-import Main.Objects.Responses.Orders.OrdersByOrganization;
-import Main.RestServicies.ConnectionService;
-import com.google.gson.Gson;
+import Main.Legacy.RestServicies.ConnectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import java.io.*;
-import java.net.HttpURLConnection;;
-import java.util.ArrayList;
-import java.util.List;
+;
 
 
 @Controller
 public class GreetingController {
 
-    String date = "";
-    String phone = "";
-
     @Autowired
     public ConnectionService сonnectionService;
 
-    @GetMapping("/")
+   /* @GetMapping("/")
     public String greeting() {
         List<String> ids = new ArrayList<>();
         for (Organization org : GetOrgId().getOrganizations()){
@@ -35,9 +22,10 @@ public class GreetingController {
         }
         GetOrdersByPhoneDate(date,phone,ids);
         return "greeting";
-    }
+    }*/
 
-    public Authorization TestJson() throws IOException {
+    // TODO: 05.09.2022 посмотреть на авторизацию
+    /*public Authorization TestJson() throws IOException {
 
         HttpURLConnection con = сonnectionService.postConnetion("access_token");
         Gson gson = new Gson();
@@ -63,8 +51,8 @@ public class GreetingController {
             System.out.println(response.toString());
         }
         return authorization;
-    }
-    public Organizations GetOrgId(){
+    }*/
+    /*public Organizations GetOrgId(){
         Organizations organizations = new Organizations();
         Gson gson = new Gson();
         HttpURLConnection con = null;
@@ -90,13 +78,13 @@ public class GreetingController {
         }
         return organizations;
 
-    }
+    }*/
 
-    public OrdersByOrganization GetOrdersByPhoneDate(String date, String phone, List<String> organizations){
+    /*public OrdersByOrganization GetOrdersByPhoneDate(String date, String phone, List<String> organizations){
 
-        /*String formate = "yyyy-MM-dd hh:mm:ss";
+        *//*String formate = "yyyy-MM-dd hh:mm:ss";
         SimpleDateFormat sf = new SimpleDateFormat(formate);
-        String date = sf.format(new Date());*/
+        String date = sf.format(new Date());*//*
 
         PhoneNumberAndDateOrderRequest phoneNumberAndDateOrderRequest = new PhoneNumberAndDateOrderRequest();
         phoneNumberAndDateOrderRequest.setDeliveryDateFrom(date);
@@ -126,7 +114,7 @@ public class GreetingController {
             e.printStackTrace();
         }
         return ordersByOrganization;
-    }
+    }*/
 
 
 }
